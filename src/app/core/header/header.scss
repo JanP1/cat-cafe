@@ -1,0 +1,26 @@
+.header-container {
+  height: 50px;
+  width: 100%;
+
+  display: flex;
+
+  font-size: 15px;
+}
+
+.header-split {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.right-part {
+  justify-content: start;
+}
+
+.left-part {
+  justify-content: end;
+}
+
