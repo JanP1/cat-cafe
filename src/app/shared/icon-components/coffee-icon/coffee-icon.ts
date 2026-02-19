@@ -1,17 +1,16 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'svg[app-not-found-icon]',
+  selector: 'svg[app-coffee-icon]',
   imports: [],
-  templateUrl: './not-found-icon.html',
+  templateUrl: './coffee-icon.html',
   host: {
     '[attr.viewBox]' : 'viewBox()',
-    '[attr.fill]' : 'currentColor()',
+    '[attr.stroke]' : 'currentColor()',
   }
-
 })
 
-export class NotFoundIcon {
+export class CoffeeIcon {
   readonly viewBox = input('0 0 24 24');
   readonly currentColor = input('currentColor')
 

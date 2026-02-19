@@ -1,8 +1,9 @@
 <div class="header-button">
-  <div class="icon-container">
 
-    <img src="{{icon_source()}}" alt="Not found" class="header-icon">
+  <div class="icon-container">
+    <ng-content></ng-content>
   </div>
-  {{button_text()}}
+  <div class="button-text">{{buttonText()}}</div>
+
 
 </div>

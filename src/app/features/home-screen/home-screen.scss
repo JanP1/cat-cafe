@@ -8,6 +8,17 @@
   // background-color: teal;
 }
 
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.not-found-icon-text {
+  color: grey;
+  user-select: none;
+}
+
 .not-found-icon {
   z-index: 9;
   width: 100px;

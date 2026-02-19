@@ -5,9 +5,8 @@ import { Component, input } from '@angular/core';
   imports: [],
   templateUrl: './header-button.html',
   styleUrl: './header-button.scss',
+
 })
 export class HeaderButton {
-  button_text = input("Button");
-  icon_source = input("icon")
-
+  buttonText = input("Button");
 }

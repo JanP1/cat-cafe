@@ -1,23 +1,22 @@
 <div class="header-container">
 
   <div class="header-split right-part">
-    <app-header-button
-      [button_text]="'Home'"
-      [icon_source]="'/assets/icons/home_icon.svg'"
-    />
+
+    <app-header-button [buttonText]="'Home'" >
+      <svg class="home-icon" app-home-icon></svg>
+    </app-header-button>
 
   </div>
 
   <div class="header-split left-part">
-    <app-header-button
-      [button_text]="'Adoption'"
-      [icon_source]="'/assets/icons/paw_icon.svg'"
-    />
 
-    <app-header-button
-      [button_text]="'Contact Us'"
-      [icon_source]="'/assets/icons/coffee_icon.svg'"
-    />
+    <app-header-button [buttonText]="'Adoption'" >
+      <svg class="paw-icon" app-paw-icon></svg>
+    </app-header-button>
+
+    <app-header-button [buttonText]="'Contact Us'" >
+      <svg class="coffee-icon" app-coffee-icon></svg>
+    </app-header-button>
 
   </div>
 

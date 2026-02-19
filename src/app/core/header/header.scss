@@ -24,3 +24,35 @@
   justify-content: end;
 }
 
+.coffee-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  height: 25px;
+  fill: transparent;
+}
+
+.home-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 15px;
+  fill: white;
+  margin-bottom: 5px;
+
+}
+
+
+.paw-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  fill: transparent;
+
+  height: 25px;
+}
