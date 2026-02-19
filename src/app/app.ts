@@ -8,6 +8,7 @@ import { Header } from './core/header/header';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App {
   protected readonly title = signal('cat-cafe');
 }
