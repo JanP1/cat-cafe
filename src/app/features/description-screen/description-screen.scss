@@ -1,0 +1,19 @@
+.site-description-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+
+}
+
+.info-icon {
+  width: 100px;
+  fill: none;
+}
+
+.desc-text {
+  text-align: center;
+}

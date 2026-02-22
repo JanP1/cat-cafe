@@ -1,7 +1,19 @@
 <div class="home-screen-container">
-  <div class="not-found-container">
-    <svg class="not-found-icon-shadow" app-not-found-icon></svg>
-    <svg class="not-found-icon" app-not-found-icon></svg>
-    <p class="not-found-icon-text">Image not found</p>
-  </div>
+  @if (isLogoLoaded()) {
+    <img
+      class="cat-cafe-logo"
+      [src]="logoUrl()"
+      alt="logo"
+      (error)="handleLogoLoadError()"
+    >
+
+  }
+  @else {
+    <div class="not-found-container">
+      <svg class="not-found-icon-shadow" app-not-found-icon></svg>
+      <svg class="not-found-icon" app-not-found-icon></svg>
+      <p class="not-found-icon-text">Image not found</p>
+    </div>
+
+  }
 </div>

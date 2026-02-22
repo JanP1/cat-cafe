@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NotFoundIcon } from '../../shared/icon-components/not-found-icon/not-found-icon';
 
 @Component({
@@ -9,5 +9,12 @@ import { NotFoundIcon } from '../../shared/icon-components/not-found-icon/not-fo
 })
 
 export class HomeScreen {
-  logoUrl = input("/assets/icons/not_found.svg")
+  logoUrl = signal("/assets/cat_logo2.png")
+
+  isLogoLoaded = signal(true)
+
+  handleLogoLoadError() {
+    this.isLogoLoaded.set(false)
+  }
+
 }
