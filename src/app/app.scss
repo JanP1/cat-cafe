@@ -5,10 +5,13 @@
   flex-direction: column;
   overflow: hidden;
   position: absolute;
+
+  background-image: url('/assets/coffee.jpg');
+  background-size: 1000px;
 }
 
 .displayed-content-container {
-  height: 100%;
+  height: calc(100% - 20px - 50px);
   width: calc(100vw - 20px);
   padding: 10px;
 }
@@ -21,9 +24,3 @@ app-header {
   z-index: 10;
 }
 
-.app-background {
-  width: 2000px;
-  position: absolute;
-  z-index: -1000;
-
-}

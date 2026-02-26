@@ -1,1 +1,7 @@
-<p>menu-screen works!</p>
+<div class="menu-screen-container">
+  <div class="menu-items-container">
+    @for (item of menuItems(); track item.id) {
+      <app-menu-item-component [menuItem]="item" />
+    }
+  </div>
+</div>
