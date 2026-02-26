@@ -1,9 +1,10 @@
 .page-container {
   height: 100%;
   width: 100%;
-  background-color: #222;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  position: absolute;
 }
 
 .displayed-content-container {
@@ -17,4 +18,12 @@ app-header {
   height: 50px;
   width: 100%;
   display: flex;
+  z-index: 10;
+}
+
+.app-background {
+  width: 2000px;
+  position: absolute;
+  z-index: -1000;
+
 }
