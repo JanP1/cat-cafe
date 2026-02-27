@@ -5,6 +5,7 @@ import { AdoptionScreen } from './features/adoption-screen/adoption-screen';
 import { ContactScreen } from './features/contact-screen/contact-screen';
 import { MenuScreen } from './features/menu-screen/menu-screen';
 import { CatsScreen } from './features/cats-screen/cats-screen';
+import { PageNotFound } from './core/page-not-found/page-not-found';
 
 export const routes: Routes = [
   {
@@ -30,7 +31,11 @@ export const routes: Routes = [
   {
     path: 'cats',
     component: CatsScreen,
-  }
+  },
 
 
+  {
+    path: '**',
+    component: PageNotFound,
+  },
 ];

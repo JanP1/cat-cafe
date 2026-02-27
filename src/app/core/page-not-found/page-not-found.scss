@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.pnf-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+h1 {
+  font-size: 70px;
+  background-color: darkred;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+p {
+  font-size: 20px;
+}
