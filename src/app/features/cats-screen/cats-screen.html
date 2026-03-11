@@ -1,1 +1,7 @@
-<p>cats-screen works!</p>
+<div class="cat-screen-container">
+  <div class="cat-panel-container">
+    @for (item of cats(); track item.id) {
+      <app-menu-item-component [cat]="item" />
+    }
+  </div>
+</div>
