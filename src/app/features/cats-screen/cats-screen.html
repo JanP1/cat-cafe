@@ -1,5 +1,15 @@
 <div class="cat-screen-container">
-  <div class="cat-text">Cats</div>
+  <div class="desc-panel-container">
+    <div class="desc-panel">
+      <div class="desc-title">
+        Our Residents
+      </div>
+      <div class="desc-text">
+        Cats that can be found in our Cafe.
+      </div>
+
+    </div>
+  </div>
   <div class="cat-panel-container">
     @for (item of cats(); track item.id) {
       <app-menu-item-component [cat]="item" />

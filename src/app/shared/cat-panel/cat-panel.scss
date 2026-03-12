@@ -12,17 +12,18 @@
 
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
+  border: solid 2px #dcc2ae;
 
   align-items: center;
 
-  background-color: #153545;
+  background-color: #dcc2ae;
   border-radius: 10px;
   user-select: none;
   overflow: hidden;
 
 
   &:hover {
-    background-color: #214c61;
+    border-color: black;
     transition: ease-out 0.2s;
     cursor: pointer;
   }
