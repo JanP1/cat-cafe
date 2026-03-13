@@ -13,14 +13,22 @@ export class CatsScreen {
 
   cats = signal<Cat[]>([]);
 
+  selectedCatId: number | null = null;
+
+  selectCat(id: number) {
+    this.selectedCatId = id;
+  }
+
+
   constructor(private catService: CatService) {}
 
   ngOnInit() {
-    // fetch menu items from the service
+
     this.catService.getAll().subscribe({
       next: (items) => this.cats.set(items),
       error: (err) => console.error('Failed to fetch menu items', err)
     });
   }
+
 
 }

@@ -12,7 +12,10 @@
   </div>
   <div class="cat-panel-container">
     @for (item of cats(); track item.id) {
-      <app-menu-item-component [cat]="item" />
+      <app-cat-component
+        [cat]="item"
+        [isFront]="selectedCatId === item.id"
+        (click)="selectCat(item.id)" />
     }
   </div>
 </div>
