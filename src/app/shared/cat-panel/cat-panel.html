@@ -4,6 +4,12 @@
   [class.right]="position=='right'"
   >
 
-  {{cat.name}}
+  <div class="cat-image">
+    <img [src]="cat.image_url" alt="not-found">
+  </div>
+
+  <div class="cat-name">
+    {{cat.name}}
+  </div>
 
 </div>

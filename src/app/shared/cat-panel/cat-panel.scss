@@ -1,12 +1,19 @@
 .panel {
+  user-select: none;
+  -webkit-user-select: none;
 
   width: 400px;
   height: 500px;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  gap: 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   background-color: darkslategray;
+
+  padding: 20px;
+  box-sizing: border-box;
 
 
   // Shared transition for all properties
@@ -48,3 +55,13 @@
   }
 }
 
+.cat-image {
+  width: 360px;
+  height: 360px;
+  background-color: black;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

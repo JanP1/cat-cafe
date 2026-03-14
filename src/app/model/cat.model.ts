@@ -5,4 +5,6 @@ export interface Cat {
   description: string,
   joinDate: Date,
   forAdoption: boolean,
+
+  image_url: string,
 }

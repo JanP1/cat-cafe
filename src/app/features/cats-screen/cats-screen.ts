@@ -13,20 +13,18 @@ export class CatsScreen {
 
   cats = signal<Cat[]>([]);
 
-  currentIndex = signal(0); // Tracks which ID is in the middle
+  currentIndex = signal(0);
 
-  // Helper to determine position based on index
   getPosition(index: number): string {
     const current = this.currentIndex();
     const count = this.cats().length;
 
     if (index === current) return 'middle';
 
-    // Logic for circular navigation (left/right)
     if (index === (current - 1 + count) % count) return 'left';
     if (index === (current + 1) % count) return 'right';
 
-    return 'hidden'; // For the other 7 cats
+    return 'hidden';
   }
 
   move(direction: 'prev' | 'next') {
