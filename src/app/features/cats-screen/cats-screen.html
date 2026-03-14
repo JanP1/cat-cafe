@@ -1,32 +1,35 @@
 <div class="cat-screen-container">
 
+<!--
+-- class-panel-container --
+Container that holds the content of the page - when it is bigger
+when it is bigger than cat-screen-container overflow-y should be triggered
+
+-->
   <div class="cat-panel-container">
 
+    <div class="desc-panel-container">
+      <div class="desc-panel">
+        <div class="desc-title">
+          Our Residents
+        </div>
+        <div class="desc-text">
+          Cats that can be found in our Cafe.
+        </div>
+
+      </div>
+    </div>
 
     <div class="gallery-container">
-
-
-      <div class="desc-panel-container">
-        <div class="desc-panel">
-          <div class="desc-title">
-            Our Residents
-          </div>
-          <div class="desc-text">
-            Cats that can be found in our Cafe.
-          </div>
-
-        </div>
-      </div>
-
-      <div class="gallery-container"></div>
-      @for (item of cats(); track item.id) {
-        <app-cat-component
-          [cat]="item"
-          [position]="getPosition(item.id)"
-          (click)="handleInteraction(item.id)"
-        />
-      }
+      @for (item of cats(); track item.id; let i = $index) {
+          <app-cat-component
+            [cat]="item"
+            [position]="getPosition(i)"
+            (click)="handleInteraction(i)"
+          />
+        }
     </div>
+
   </div>
 
 </div>
