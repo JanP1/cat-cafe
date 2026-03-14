@@ -11,38 +11,31 @@
 
   padding: 10px;
   box-sizing: border-box;
-  background-color: black;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 15px;
-
-  overflow: hidden;
-
-}
-
-.cat-panel-container {
-  background-color: teal;
-  width: 100%;
-  height: 100%;
-
-  box-sizing: border-box;
 
   overflow-y: auto;
 
 }
 
-.gallery-container {
+.cat-panel-container {
+  width: 100%;
   min-height: 800px;
   height: 100%;
-  background-color: darkgreen;
-  width: 100%;
+  display: flex;
+
+}
+
+.gallery-container {
+  height: 100%;
+  width: 70%;
+
   display: grid;
   grid-template-columns: 3fr 7fr;
 
   box-sizing: border-box;
   padding: 10px;
+  position: relative;
 }
 
 .desc-panel {
