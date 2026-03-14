@@ -1,92 +1,50 @@
-:host {
-  display: flex;
-  justify-content: center;
-}
+.panel {
 
-.cat-panel-container {
-
-  margin: 10px;
-  max-height: 500px;
-  max-width: 400px;
-  padding: 20px;
-
-
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  border: solid 5px #ece1d2;
-  background-color: #99765e;
-
-  align-items: center;
-
+  width: 400px;
+  height: 500px;
   border-radius: 10px;
-  user-select: none;
-  overflow: hidden;
-  box-sizing: border-box;
-
-}
-
-
-.cat-panel-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-width: 350px;
-  min-height: 350px;
-
-  border-radius: 10px;
-  background-color: #3e2816;
-}
-
-.cat-panel-image {
-  padding: 5px;
-}
-
-.cat-panel-text-container {
-  background-color: #674d38;
-  border-radius: 10px;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: lightskyblue;
 
-  box-sizing: border-box;
-  overflow: hidden;
-  height: 70px;
-  width: 100%;
-}
 
-.cat-name {
-  font-size: 20px;
-}
+  // Shared transition for all properties
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.6s ease,
+              visibility 0.6s;
 
-.middle {
   position: absolute;
-  top: 50%;
-  left: 20%;
-
-  z-index: 9999999;
-
-  transition: ease-in .3s;
-
-  top: 0%;
-  left: 20%;
-
-}
-
-.smaller {
-  -webkit-transform:scale(0.8);
-  -moz-transform:scale(0.8);
-  -ms-transform:scale(0.8);
-  transform:scale(0.8);
-  position: absolute;
-
-  transition: ease-in .3s;
-  margin-left: 20px;
-  z-index: 0;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%) scale(0.5); // Default "hidden" state
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
+  &.middle {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 10;
+  }
+
+  &.left {
+    opacity: 0.5;
+    visibility: visible;
+    transform: translate(-150%, -50%) scale(0.8);
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  &.right {
+    opacity: 0.5;
+    visibility: visible;
+    transform: translate(50%, -50%) scale(0.8);
+    z-index: 5;
+    pointer-events: auto;
+    cursor: pointer;
+  }
 }
+

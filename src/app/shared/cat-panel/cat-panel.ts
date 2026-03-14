@@ -10,8 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CatPanel {
-  @Input() isFront = false;
-  @Input() isMiddle = true;
   @Input() cat!: Cat;
-  @Input() catImageUrl = 'assets/cat.png';
+  @Input() position = "left";
 }

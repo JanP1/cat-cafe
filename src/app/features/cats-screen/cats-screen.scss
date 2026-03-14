@@ -1,6 +1,18 @@
+:host {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
 .cat-screen-container {
+
   width: 100%;
   height: 100%;
+
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: black;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,15 +23,26 @@
 }
 
 .cat-panel-container {
+  background-color: teal;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  overflow: hidden;
 
-  position: relative;
+  box-sizing: border-box;
+
+  overflow-y: auto;
+
+}
+
+.gallery-container {
+  min-height: 800px;
+  height: 100%;
+  background-color: darkgreen;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .desc-panel {
@@ -38,7 +61,7 @@
 }
 
 .desc-panel-container {
-  width: 50%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;

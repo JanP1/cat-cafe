@@ -1,13 +1,9 @@
-<div class="cat-panel-container"
-  [class.smaller]="!isFront"
-  [class.middle]="isFront"
+<div class="panel"
+  [class.middle]="position=='middle'"
+  [class.left]="position=='left'"
+  [class.right]="position=='right'"
   >
-  <div class="cat-panel-image-container">
-    <img class="cat-panel-image" [src]="catImageUrl" alt="img">
-  </div>
-  <div class="cat-panel-text-container">
-    <div class="cat-name">
-      {{cat.name}}
-    </div>
-  </div>
+
+  {{cat.name}}
+
 </div>
