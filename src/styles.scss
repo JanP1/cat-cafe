@@ -29,3 +29,8 @@ app-root {
 
 }
 
+// Getting rid of the highlight when clicking on the phone
+* {
+  -webkit-tap-highlight-color: transparent; /* Chrome, Safari, Android */
+  -moz-tap-highlight-color: transparent;    /* Firefox (optional) */
+}
