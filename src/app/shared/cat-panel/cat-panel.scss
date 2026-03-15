@@ -65,8 +65,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
+.actual-cat-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 @media(max-width: 1400px) {
