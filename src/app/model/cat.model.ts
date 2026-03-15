@@ -6,5 +6,5 @@ export interface Cat {
   joinDate: Date,
   forAdoption: boolean,
 
-  image_url: string,
+  imageUrl: string,
 }
