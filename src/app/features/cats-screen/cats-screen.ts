@@ -44,25 +44,44 @@ export class CatsScreen {
 
   private touchStartX = 0;
   private touchEndX = 0;
+  private touchStartY = 0;
+  private touchEndY = 0;
 
   handleTouchStart(event: TouchEvent) {
     this.touchStartX = event.changedTouches[0].screenX;
+    this.touchStartY = event.changedTouches[0].screenY;
   }
 
   handleTouchEnd(event: TouchEvent) {
     this.touchEndX = event.changedTouches[0].screenX;
+    this.touchEndY = event.changedTouches[0].screenY;
+
     this.handleSwipe();
   }
 
   handleSwipe() {
-    const threshold = 50; // minimum distance to be considered a swipe
-    const diff = this.touchStartX - this.touchEndX;
+    const threshold = 50;
 
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        this.move('next'); // Swiped left
-      } else {
-        this.move('prev'); // Swiped right
+    const diffX = this.touchStartX - this.touchEndX;
+    const diffY = this.touchStartY - this.touchEndY;
+
+    const isSmallViewport = window.innerWidth < 600;
+
+    if (isSmallViewport) {
+      if (Math.abs(diffY) > threshold) {
+        if (diffY > 0) {
+          this.move('next'); // swipe up
+        } else {
+          this.move('prev'); // swipe down
+        }
+      }
+    } else {
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+          this.move('next'); // swipe left
+        } else {
+          this.move('prev'); // swipe right
+        }
       }
     }
   }

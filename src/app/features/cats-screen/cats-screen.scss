@@ -27,11 +27,10 @@
 }
 
 .gallery-container {
+  overflow: hidden;
   height: 100%;
   width: 70%;
 
-  display: grid;
-  grid-template-columns: 3fr 7fr;
 
   box-sizing: border-box;
   padding: 10px;
@@ -60,4 +59,16 @@
   align-items: center;
 }
 
+@media (max-width: 1400px) {
+  .desc-title {font-size: 30px;}
 
+}
+
+@media (max-width: 960px) {
+  .cat-panel-container {flex-direction: column; min-height: 400px;}
+  .desc-panel-container {width: 100%; font-size: 12px;}
+  .desc-panel {width: auto; height: auto;}
+  .desc-title {font-size: 20px;}
+  .gallery-container {width: 100%;}
+
+}
