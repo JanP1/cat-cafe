@@ -24,3 +24,7 @@
 
 }
 
+@media (max-width: 600px) {
+  .header-button {margin: 0px; padding: 0px 5px 0px 5px; align-items: center;}
+  .icon-container {display: none;}
+}

@@ -3,26 +3,27 @@
   width: 100%;
 
   display: flex;
-
   font-size: 15px;
+
 }
+
 
 .header-split {
   height: 100%;
-  width: 100%;
   overflow: hidden;
 
   display: flex;
   align-items: center;
 }
 
-.right-part {
+.left-part {
   justify-content: start;
+  width: 100px;
 }
 
-.left-part {
+.right-part {
   justify-content: end;
-  min-width: 400px;
+  width: 100%;
 }
 
 .coffee-icon {
@@ -56,4 +57,15 @@
   fill: transparent;
 
   height: 25px;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .header-container { font-size: 10px;}
+  .right-part {padding-right: 10px;}
+  .left-part {padding-left: 10px;}
+
+
 }
