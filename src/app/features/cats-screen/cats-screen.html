@@ -20,7 +20,10 @@ when it is bigger than cat-screen-container overflow-y should be triggered
       </div>
     </div>
 
-    <div class="gallery-container">
+    <div class="gallery-container"
+      (touchstart)="handleTouchStart($event)"
+      (touchend)="handleTouchEnd($event)"
+    >
       @for (item of cats(); track item.id; let i = $index) {
           <app-cat-component
             [cat]="item"
