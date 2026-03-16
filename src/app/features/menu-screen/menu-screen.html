@@ -1,4 +1,8 @@
 <div class="menu-screen-container">
+  <div class="menu-item-type-container">
+    Menu Item Type
+  </div>
+
   <div class="menu-items-container">
     @for (item of menuItems(); track item.id) {
       <app-menu-item-component [menuItem]="item" />

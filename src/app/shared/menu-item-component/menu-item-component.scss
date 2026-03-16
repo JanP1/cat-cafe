@@ -1,6 +1,5 @@
 :host {
   display: flex;
-  width: 100%;
   justify-content: center;
 }
 
@@ -9,15 +8,16 @@
   height: 200px;
   padding: 20px;
 
-  max-width: 400px;
-  width: auto;
+  max-width: 500px;
+  min-width: 200px;
+  width: 100%;
 
   display: grid;
   grid-template-columns: 1fr 200px;
 
   align-items: center;
 
-  background-color: darkslategray;
+  background-color: #38342b;
   border-radius: 10px;
   user-select: none;
   overflow: hidden;
@@ -38,7 +38,7 @@
   align-items: center;
   width: 200px;
   height: 200px;
-  background-color: teal;
+  background-color: black;
 
   box-sizing: border-box;
   border-radius: 10px;
@@ -79,23 +79,22 @@
   font-size: 20px;
 
   position: absolute;
+  background-color: darkgreen;
+  border: solid 2px green;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 
-@media(max-width: 900px) {
+
+@media(max-width: 500px) {
   .item-desc {display: none;}
-  .item-price {display: none;}
-  .item-name {
+  .item-name {position: absolute; right: 20px; top: 20px; background-color: black; box-sizing: border-box; padding: 5px; border-radius: 5px;}
+  .menu-item-image-container {width: 100%; margin-right: 0px; box-sizing: border-box; }
+  .menu-item-text-container { margin: 0px; }
+  .menu-item-container {display: flex;}
 
-    background-color: darkgreen;
-    border: solid 2px green;
-    border-radius: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-
-  .menu-item-text-container {width: 100%; height: auto; margin: 0px; position: absolute; bottom: 10px; left: 0; align-items: center; justify-content: center;}
-  .menu-item-container {grid-template-columns: 1fr;}
 
 }
+
