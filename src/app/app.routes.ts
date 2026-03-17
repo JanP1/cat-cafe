@@ -6,6 +6,7 @@ import { ContactScreen } from './features/contact-screen/contact-screen';
 import { MenuScreen } from './features/menu-screen/menu-screen';
 import { CatsScreen } from './features/cats-screen/cats-screen';
 import { PageNotFound } from './core/page-not-found/page-not-found';
+import { CreditsScreen } from './features/credits-screen/credits-screen';
 
 export const routes: Routes = [
   {
@@ -31,6 +32,11 @@ export const routes: Routes = [
   {
     path: 'cats',
     component: CatsScreen,
+  },
+  {
+    path: 'credits',
+    component: CreditsScreen,
+
   },
 
 

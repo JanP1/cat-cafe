@@ -25,6 +25,20 @@
 }
 
 @media (max-width: 600px) {
-  .header-button {margin: 0px; padding: 0px 5px 0px 5px; align-items: center;}
+  .header-button {
+    margin: 0px;
+    padding: 0px 5px 0px 5px;
+    align-items: center;
+    background-color: teal;
+    margin-left: 10px; box-sizing: border-box; border-radius: 5px;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+  }
+
   .icon-container {display: none;}
 }

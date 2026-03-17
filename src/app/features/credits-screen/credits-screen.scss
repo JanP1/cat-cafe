@@ -1,0 +1,25 @@
+.link-container {
+  height: 100%;
+  width: 100%;
+
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+
+  gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: black;
+
+  overflow-y: auto;
+}
+
+a {
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  background-color: darkslategray;
+
+}
