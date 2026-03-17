@@ -18,7 +18,7 @@
 
 .left-part {
   justify-content: start;
-  width: 100px;
+  width: 400px;
 }
 
 .right-part {
@@ -65,7 +65,8 @@
 @media (max-width: 600px) {
   .header-container { font-size: 10px;}
   .right-part {padding-right: 10px;}
-  .left-part {padding-left: 10px;}
+  .left-part {padding-left: 10px; width: 200px;}
+
 
 
 }
