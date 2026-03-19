@@ -27,7 +27,11 @@ export const routes: Routes = [
   },
   {
     path: 'menu',
-    component: MenuScreen,
+    children: [
+      { path: '', redirectTo: 'coffee', pathMatch: 'full' },
+
+      { path: ':type', component: MenuScreen }
+    ]
   },
   {
     path: 'cats',
