@@ -23,9 +23,12 @@
     </div>
   </div>
 
-  <div class="menu-items-container">
-    @for (item of menuItems(); track item.id) {
-      <app-menu-item-component [menuItem]="item" />
-    }
+  <div class="menu-grid-wrapper">
+    <div class="menu-items-container">
+      @for (item of filteredMenuItems(); track item.id) {
+        <app-menu-item-component [menuItem]="item" />
+      }
+    </div>
+
   </div>
 </div>
