@@ -9,9 +9,9 @@
 }
 
 .menu-item-data-wrapper {
-  height: auto;
   width: 70%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 30vw 1fr;
   align-items: stretch;
 
   padding: 20px;
@@ -19,7 +19,7 @@
 }
 
 .menu-item-information-container {
-  width: 100%;
+  width: auto;
 
   background-color: #2d1d15;
   border: 10px solid #794e36;
@@ -27,7 +27,7 @@
   margin-left: 20px;
   border-radius: 20px;
 
-  padding: 40px;
+  padding: 2vw;
   display: flex;
   flex-direction: column;
 
@@ -36,12 +36,17 @@
 
 .item-name {
   font-weight: bold;
-  font-size: 70px;
+  font-size: calc(0.02 * 100vw);
   margin-bottom: 20px;
 }
 
 .item-desc {
   color: grey;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
 }
 
 .additional-information-container {
@@ -53,4 +58,82 @@
   padding: 20px;
 
   box-sizing: border-box;
+}
+
+
+@media(max-width: 1600px) {
+  .menu-item-information-container {
+    border: solid 5px #794e36;
+    padding: 20px;
+  }
+  .item-name {
+    font-size: 40px;
+  }
+  .item-desc {
+    font-size: 12px;
+  }
+  .additional-information-container {
+    font-size: 12px;
+  }
+
+}
+
+@media(max-width: 1200px) {
+  .menu-item-data-wrapper {
+    height: 90%;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 1fr;
+  }
+  .menu-item-information-container {
+    border: solid 5px #794e36;
+    padding: 20px;
+    margin-left: 0px;
+    margin-top: 20px;
+    flex-direction: row;
+  }
+  .item-name {
+    font-size: 30px;
+  }
+  .item-desc {
+    font-size: 12px;
+  }
+  .additional-information-container {
+    margin: 0px;
+    margin-left: 20px;
+    font-size: 12px;
+  }
+
+}
+
+
+
+@media(max-width: 600px) {
+  .menu-item-data-wrapper {
+    height: 90%;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 1fr;
+  }
+  .menu-item-information-container {
+    border: solid 5px #794e36;
+    padding: 20px;
+    margin-left: 0px;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .item-name {
+    font-size: 30px;
+  }
+  .item-desc {
+    font-size: 12px;
+  }
+  .additional-information-container {
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
 }
