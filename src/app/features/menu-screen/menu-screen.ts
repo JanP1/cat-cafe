@@ -1,10 +1,10 @@
-import { Component, inject, signal, computed, effect, OnInit } from '@angular/core';
+import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { MenuItemComponent } from '../../shared/menu-item-component/menu-item-component';
 import { MenuItem } from '../../model/menu-item.model';
 import { MenuItemService } from '../../core/services/menu_items.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-menu-screen',
@@ -13,44 +13,31 @@ import { map } from 'rxjs';
   templateUrl: './menu-screen.html',
   styleUrl: './menu-screen.scss',
 })
+
 export class MenuScreen implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private menuItemService = inject(MenuItemService);
-
   private readonly VALID_TYPES = ['coffee', 'beverages', 'desserts'];
 
   menuItemType = toSignal(
-    this.route.params.pipe(map(p => p['type'])),
+    this.route.params.pipe(
+      map(p => p['type']),
+      tap(type => {
+        if (type && !this.VALID_TYPES.includes(type)) {
+          this.router.navigate(['/404'], { skipLocationChange: true });
+        }
+      })
+    ),
     { initialValue: '' }
   );
 
   allMenuItems = signal<MenuItem[]>([]);
-
-  filteredMenuItems = computed(() => {
-    const type = this.menuItemType();
-
-    if (!this.VALID_TYPES.includes(type)) {
-      return [];
-    }
-
-    return this.allMenuItems().filter(item => item.type === type);
-  });
-
-  constructor() {
-    effect(() => {
-      const type = this.menuItemType();
-
-      if (type && !this.VALID_TYPES.includes(type)) {
-        this.router.navigate(['/404']);
-      }
-    });
-  }
+  filteredMenuItems = computed(() =>
+    this.allMenuItems().filter(item => item.type === this.menuItemType())
+  );
 
   ngOnInit() {
-    this.menuItemService.getAll().subscribe({
-      next: (items) => this.allMenuItems.set(items),
-      error: (err) => console.error('Failed to fetch menu items', err)
-    });
+    this.menuItemService.getAll().subscribe(items => this.allMenuItems.set(items));
   }
 }
