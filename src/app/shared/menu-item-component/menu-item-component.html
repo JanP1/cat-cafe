@@ -1,17 +1,18 @@
-<div class="menu-item-container">
+<div class="menu-item-container"
+  [routerLink]="menuItemUrl()">
   <div class="menu-item-image-container">
-    <img class="menu-item-image" [src]="menuItem.imageUrl" alt="img">
+    <img class="menu-item-image" [src]="menuItem().imageUrl" alt="img">
   </div>
   <div class="menu-item-text-container">
     <div class="item-name">
-      {{menuItem.name}}
+      {{menuItem().name}}
     </div>
     <div class="item-desc">
-      {{menuItem.description}}
+      {{menuItem().description}}
     </div>
   </div>
 
   <div class="item-price">
-    {{menuItem.price}} $
+    {{menuItem().price}} $
   </div>
 </div>
