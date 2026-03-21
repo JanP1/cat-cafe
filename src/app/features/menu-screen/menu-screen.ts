@@ -42,7 +42,7 @@ export class MenuScreen implements OnInit {
       const type = this.menuItemType();
 
       if (type && !this.VALID_TYPES.includes(type)) {
-        this.router.navigate(['/404'], { skipLocationChange: true });
+        this.router.navigate(['/404']);
       }
     });
   }
