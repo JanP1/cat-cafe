@@ -7,6 +7,8 @@ import { MenuScreen } from './features/menu-screen/menu-screen';
 import { CatsScreen } from './features/cats-screen/cats-screen';
 import { PageNotFound } from './core/page-not-found/page-not-found';
 import { CreditsScreen } from './features/credits-screen/credits-screen';
+import { MenuItemScreen } from './shared/menu-item-screen/menu-item-screen';
+import { menuItemResolver } from './core/resolvers/menu-item-resolver';
 
 export const routes: Routes = [
   {
@@ -29,8 +31,12 @@ export const routes: Routes = [
     path: 'menu',
     children: [
       { path: '', redirectTo: 'coffee', pathMatch: 'full' },
-
-      { path: ':type', component: MenuScreen }
+      { path: ':type', component: MenuScreen },
+      {
+        path: ':type/:id',
+        component: MenuItemScreen,
+        resolve: { itemData: menuItemResolver }
+      }
     ]
   },
   {
@@ -40,12 +46,13 @@ export const routes: Routes = [
   {
     path: 'credits',
     component: CreditsScreen,
-
   },
-
-
+  {
+    path: '404',
+    component: PageNotFound,
+  },
   {
     path: '**',
-    component: PageNotFound,
+    redirectTo: '404',
   },
 ];

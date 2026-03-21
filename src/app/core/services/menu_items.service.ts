@@ -16,4 +16,8 @@ export class MenuItemService {
     return this.http.get<MenuItem[]>(this.baseUrl);
   }
 
+  getItemById(id: number) {
+    return this.http.get<MenuItem>(`${this.baseUrl}/${id}`);
+  }
+
 }

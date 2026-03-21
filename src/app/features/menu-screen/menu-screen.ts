@@ -1,41 +1,43 @@
-import { Component, inject, signal, computed } from '@angular/core'; // Added computed
+import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { MenuItemComponent } from '../../shared/menu-item-component/menu-item-component';
 import { MenuItem } from '../../model/menu-item.model';
 import { MenuItemService } from '../../core/services/menu_items.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
-import { map } from 'rxjs';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-menu-screen',
-  standalone: true, // Assuming you are using standalone
+  standalone: true,
   imports: [MenuItemComponent, RouterLink, RouterLinkActive],
   templateUrl: './menu-screen.html',
   styleUrl: './menu-screen.scss',
 })
-export class MenuScreen {
-  private route = inject(ActivatedRoute);
-  private menuItemService = inject(MenuItemService); // Using inject for consistency
 
-  // 1. Get the type from the URL as a signal
+export class MenuScreen implements OnInit {
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private menuItemService = inject(MenuItemService);
+  private readonly VALID_TYPES = ['coffee', 'beverages', 'desserts'];
+
   menuItemType = toSignal(
-    this.route.params.pipe(map(p => p['type'])),
-    { initialValue: 'coffee' }
+    this.route.params.pipe(
+      map(p => p['type']),
+      tap(type => {
+        if (type && !this.VALID_TYPES.includes(type)) {
+          this.router.navigate(['/404'], { skipLocationChange: true });
+        }
+      })
+    ),
+    { initialValue: '' }
   );
 
-  // 2. The raw list of all items
   allMenuItems = signal<MenuItem[]>([]);
-
-  // 3. The filtered list (computed automatically reacts to changes in 1 or 2)
-  filteredMenuItems = computed(() => {
-    const type = this.menuItemType();
-    return this.allMenuItems().filter(item => item.type === type);
-  });
+  filteredMenuItems = computed(() =>
+    this.allMenuItems().filter(item => item.type === this.menuItemType())
+  );
 
   ngOnInit() {
-    this.menuItemService.getAll().subscribe({
-      next: (items) => this.allMenuItems.set(items),
-      error: (err) => console.error('Failed to fetch menu items', err)
-    });
+    this.menuItemService.getAll().subscribe(items => this.allMenuItems.set(items));
   }
 }
