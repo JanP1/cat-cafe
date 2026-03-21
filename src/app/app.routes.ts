@@ -40,12 +40,13 @@ export const routes: Routes = [
   {
     path: 'credits',
     component: CreditsScreen,
-
   },
-
-
+  {
+    path: '404',
+    component: PageNotFound,
+  },
   {
     path: '**',
-    component: PageNotFound,
+    redirectTo: '404',
   },
 ];
