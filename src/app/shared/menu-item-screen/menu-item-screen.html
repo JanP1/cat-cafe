@@ -1,21 +1,32 @@
 <div class="menu-item-screen-container">
-  <div class="menu-item-data-wrapper">
+  <div class="menu-item-screen-contents">
+    <div class="menu-item-data-wrapper">
 
-    <img class="image" [src]="item()?.imageUrl" [alt]="item()?.name">
+      <div class="menu-item-image-container large-image">
+        <img class="image" [src]="item()?.imageUrl" [alt]="item()?.name">
+      </div>
 
-    <div class="menu-item-information-container">
-      <div>
-        <div class="item-name">{{item()?.name}}</div>
-        <div class="item-desc">
-          {{item()?.description}}
+      <div class="menu-item-information-container">
+        <div class="menu-item-basic-info">
+          <div class="menu-item-image-container small-image">
+            <img class="image" [src]="item()?.imageUrl" [alt]="item()?.name">
+          </div>
+          <div class="name-and-desc">
+            <div class="item-name">{{item()?.name}}</div>
+            <div class="item-desc">
+              {{item()?.description}}
+            </div>
+
+          </div>
         </div>
-      </div>
-      <div class="additional-information-container">
-        Additional information
+        <div class="additional-information-container">
+          Additional information
+
+        </div>
 
       </div>
-
     </div>
+
   </div>
 
 </div>
